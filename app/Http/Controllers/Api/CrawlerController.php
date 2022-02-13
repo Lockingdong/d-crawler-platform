@@ -43,7 +43,7 @@ class CrawlerController extends Controller
             $res = $client->request('GET', config('app.crawler_url') . '/page/' . urlencode($request->url));
 
             return response()->json([
-                'status' => 'fail',
+                'status' => 'succ',
                 'data' => json_decode($res->getBody(), true)['data']
             ], 200);
 
